@@ -6,5 +6,5 @@ in python.mkDerivation {
   name = "sans_python";
   src = ./.;
   buildInputs = builtins.attrValues python.pkgs;
-  propagatedBuildInputs = (builtins.attrValues python.pkgs) ++ (builtins.attrValues python.modules);
+  propagatedBuildInputs = (builtins.attrValues python.pkgs);
 }
