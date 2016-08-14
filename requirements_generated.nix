@@ -8,6 +8,46 @@
 
 self: {
 
+  "Automat" = python.mkDerivation {
+    name = "Automat-0.1.1";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/db/43/7b7f5a8aa070ea56d0c1214ad96594e04a4e01e820fd47e9e66a7177eb0d/Automat-0.1.1.tar.gz";
+      sha256= "da060c95e768f38b6c11c39f00c7276c0fe87bb81b3607e3c20ed933606fbaee";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [
+      self."characteristic"
+      self."six"
+    ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "
+    Self-service finite-state machines for the programmer on the go.    ";
+    };
+  };
+
+
+
+  "characteristic" = python.mkDerivation {
+    name = "characteristic-14.3.0";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/dc/66/54b7a4758ea44fbc93895c7745060005272560fb2c356f2a6f7448ef9a80/characteristic-14.3.0.tar.gz";
+      sha256= "ded68d4e424115ed44e5c83c2a901a0b6157a959079d7591d92106ffd3ada380";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "Python attributes without boilerplate.";
+    };
+  };
+
+
+
   "py" = python.mkDerivation {
     name = "py-1.4.31";
     src = pkgs.fetchurl {
@@ -59,6 +99,24 @@ self: {
       homepage = "";
       license = licenses.mit;
       description = "the blessed package to manage your versions by scm tags";
+    };
+  };
+
+
+
+  "six" = python.mkDerivation {
+    name = "six-1.10.0";
+    src = pkgs.fetchurl {
+      url = "https://pypi.python.org/packages/b3/b2/238e2590826bfdd113244a40d9d3eb26918bd798fc187e2360a8367068db/six-1.10.0.tar.gz";
+      sha256= "105f8d68616f8248e24bf0e9372ef04d3cc10104f1980f54d57b2ce73a5ad56a";
+    };
+    doCheck = commonDoCheck;
+    buildInputs = commonBuildInputs;
+    propagatedBuildInputs = [ ];
+    meta = with pkgs.stdenv.lib; {
+      homepage = "";
+      license = licenses.mit;
+      description = "Python 2 and 3 compatibility utilities";
     };
   };
 
