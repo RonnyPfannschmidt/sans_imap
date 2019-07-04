@@ -1,6 +1,0 @@
-Automat==0.1.1
-characteristic==14.3.0
-py==1.4.31
-pytest==2.9.2
-setuptools-scm==1.11.1
-six==1.10.0
